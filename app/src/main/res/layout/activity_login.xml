@@ -74,6 +74,11 @@
                 android:fontFamily="@font/light_italic"
                 android:text="Quên mật khẩu?"
                 android:textSize="16dp" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
             <Button
                 android:id="@+id/btnLogin"
