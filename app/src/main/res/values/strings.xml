@@ -2,4 +2,7 @@
     <string name="app_name">TradeUp</string>
     <string name="login">ĐĂNG NHẬP</string>
     <string name="register">ĐĂNG KÝ</string>
+    <string name="xacminh">XÁC MINH EMAIL</string>
+    <string name="btnxacnhan">XÁC NHẬN</string>
+    <string name="tn">Chúng tôi đã gửi một email xác minh đến địa chỉ của bạn. Vui lòng kiểm tra và xác nhận để tiếp tục.</string>
 </resources>
