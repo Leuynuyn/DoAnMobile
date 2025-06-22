@@ -1,34 +1,28 @@
 package com.example.tradeup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class RegisterActivity extends AppCompatActivity {
-
     FirebaseAuth mAuth;
+    FirebaseFirestore db;
     EditText edtUserName, edtEmail, edtPhoneNumber, edtPassWord;
     Button btnRegister;
     ProgressBar progressBarRegister;
-    private static final String TAG = "RegisterActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void addControl() {
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
         edtUserName = findViewById(R.id.edtUserName);
         edtEmail = findViewById(R.id.edtEmail);
         edtPhoneNumber = findViewById(R.id.edtPhoneNumber);
@@ -55,51 +50,47 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void addEvent() {
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBarRegister.setVisibility(View.VISIBLE);
-                String user, pw, phone, email;
-                user = edtUserName.getText().toString();
-                pw = edtPassWord.getText().toString();
-                phone = edtPhoneNumber.getText().toString();
-                email = edtEmail.getText().toString();
+        btnRegister.setOnClickListener(v -> {
+            String username = edtUserName.getText().toString().trim();
+            String email = edtEmail.getText().toString().trim();
+            String phone = edtPhoneNumber.getText().toString().trim();
+            String password = edtPassWord.getText().toString().trim();
 
-                if(TextUtils.isEmpty(user)){
-                    Toast.makeText(RegisterActivity.this, "Enter UserName", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(pw)){
-                    Toast.makeText(RegisterActivity.this, "Enter PassWord", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(phone)){
-                    Toast.makeText(RegisterActivity.this, "Enter PhoneNumber", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if(TextUtils.isEmpty(email)){
-                    Toast.makeText(RegisterActivity.this, "Email", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                mAuth.createUserWithEmailAndPassword(email, pw)
-                        .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBarRegister.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    Log.d(TAG, "createUserWithEmail:success");
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    Toast.makeText(RegisterActivity.this, "Register success!", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(RegisterActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                    Toast.makeText(RegisterActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+            // Kiểm tra input
+            if (TextUtils.isEmpty(username)) {
+                edtUserName.setError("Vui lòng nhập tên người dùng");
+                return;
             }
+            if (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                edtEmail.setError("Vui lòng nhập email hợp lệ");
+                return;
+            }
+            if (TextUtils.isEmpty(phone) || !phone.matches("\\d{10}")) {
+                edtPhoneNumber.setError("Vui lòng nhập số điện thoại 10 số");
+                return;
+            }
+            if (TextUtils.isEmpty(password) || password.length() < 6) {
+                edtPassWord.setError("Mật khẩu phải có ít nhất 6 ký tự");
+                return;
+            }
+
+            progressBarRegister.setVisibility(View.VISIBLE);
+            // Kiểm tra email đã tồn tại
+            mAuth.fetchSignInMethodsForEmail(email).addOnCompleteListener(task -> {
+                if (task.isSuccessful() && task.getResult().getSignInMethods().size() > 0) {
+                    progressBarRegister.setVisibility(View.GONE);
+                    Toast.makeText(RegisterActivity.this, "Email đã được đăng ký", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Chuyển sang màn hình OTP
+                    Intent intent = new Intent(RegisterActivity.this, OtpEmailActivity.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("email", email);
+                    intent.putExtra("phone", phone);
+                    intent.putExtra("password", password);
+                    startActivity(intent);
+                    progressBarRegister.setVisibility(View.GONE);
+                }
+            });
         });
     }
-
 }

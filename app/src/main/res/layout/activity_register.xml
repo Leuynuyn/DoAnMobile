@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".LoginActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -36,6 +36,13 @@
                 android:text="@string/register"
                 android:textColor="@color/black"
                 android:textSize="26sp" />
+            <ProgressBar
+                android:id="@+id/progressBarRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:visibility="gone" />
 
             <EditText
                 android:id="@+id/edtUserName"
@@ -84,17 +91,13 @@
                 android:layout_marginTop="25dp"
                 android:background="@drawable/edittext_style"
                 android:drawableStart="@drawable/password"
-                android:hint="Pass word..."
                 android:drawablePadding="5dp"
+                android:hint="Pass word..."
                 android:inputType="text"
                 android:paddingLeft="10dp"
                 android:textSize="16dp" />
 
-            <ProgressBar
-                android:id="@+id/progressBarRegister"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+
 
             <Button
                 android:id="@+id/btnRegister"
@@ -105,10 +108,15 @@
                 android:backgroundTint="#FFC981"
                 android:fontFamily="@font/roboto_bold"
                 android:letterSpacing="0.1"
-                android:text="ĐĂNG NHẬP"
+                android:text="ĐĂNG KÝ"
                 android:textColor="@color/black"
                 android:textSize="17dp" />
 
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:text="" />
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</FrameLayout>
