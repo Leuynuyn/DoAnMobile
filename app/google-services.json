@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "117312469889",
+    "project_id": "tradeup-8b733",
+    "storage_bucket": "tradeup-8b733.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117312469889:android:bd355a605665ba50c0c680",
+        "android_client_info": {
+          "package_name": "com.example.tradeup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117312469889-79utfa2mt2ruqbqjqjvac2pln3hmehtp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tradeup",
+            "certificate_hash": "02c40c2b63819bb45b281ac91380e157652a790c"
+          }
+        },
+        {
+          "client_id": "117312469889-rmm982nku5m1o4nue1954m12euoulgga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwc5YnzmAHpW_qJmdTAI0mtZOjcry4ERg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117312469889-rmm982nku5m1o4nue1954m12euoulgga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

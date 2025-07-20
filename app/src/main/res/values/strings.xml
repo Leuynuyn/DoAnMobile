@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">TradeUp</string>
+    <string name="login">ĐĂNG NHẬP</string>
+    <string name="register">ĐĂNG KÝ</string>
+    <string name="xacminh">XÁC MINH EMAIL</string>
+    <string name="btnxacnhan">XÁC NHẬN</string>
+    <string name="tn">Chúng tôi đã gửi một email xác minh đến địa chỉ của bạn. Vui lòng kiểm tra và xác nhận để tiếp tục.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="product_categories">
+        <item>Loại sản phẩm</item>
+        <item>Quần áo</item>
+        <item>Sách</item>
+        <item>Điện thoại</item>
+        <item>Trang sức</item>
+        <item>Bàn phím</item>
+        <item>Giày dép</item>
+        <item>Khác</item>
+    </string-array>
+
+    <string-array name="product_conditions">
+        <item>Tình trạng sản phẩm</item>
+        <item>Mới</item>
+        <item>Đã qua sử dụng</item>
+    </string-array>
+    <string-array name="status_options">
+        <item>Còn hàng</item>
+        <item>Hết hàng</item>
+        <item>Ngừng bán</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.LoginActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="133dp"
+                android:layout_height="108dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/logologo" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:text="@string/register"
+                android:textColor="@color/black"
+                android:textSize="26sp" />
+            <ProgressBar
+                android:id="@+id/progressBarRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="3"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/edtUserName"
+                android:layout_width="297dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edittext_style"
+                android:drawableStart="@drawable/ic_user"
+                android:hint="User name..."
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="297dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittext_style"
+                android:drawableStart="@drawable/email"
+                android:hint="Email..."
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/edtPhoneNumber"
+                android:layout_width="297dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittext_style"
+                android:drawableStart="@drawable/phone"
+                android:hint="Phone number..."
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/edtPassWord"
+                android:layout_width="297dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/edittext_style"
+                android:drawableStart="@drawable/password"
+                android:drawablePadding="5dp"
+                android:hint="Pass word..."
+                android:inputType="textPassword"
+                android:paddingLeft="10dp"
+                android:textSize="16dp" />
+
+
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="297dp"
+                android:layout_height="53dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#FFC981"
+                android:fontFamily="@font/roboto_bold"
+                android:letterSpacing="0.1"
+                android:text="ĐĂNG KÝ"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:text="" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Ảnh đại diện -->
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_avatar"
+            android:contentDescription="Avatar" />
+
+        <!-- Nút chọn ảnh -->
+        <Button
+            android:id="@+id/btnChooseImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn ảnh" />
+
+        <!-- Các trường thông tin -->
+        <EditText
+            android:id="@+id/edtUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên đăng nhập"
+            android:inputType="textPersonName"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/edtDisplayName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên hiển thị"
+            android:inputType="textPersonName"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/edtPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số điện thoại"
+            android:inputType="phone"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/edtBio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tiểu sử"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:gravity="top"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/edtContactInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Thông tin liên hệ"
+            android:inputType="text"
+            android:layout_marginTop="10dp" />
+
+        <!-- Nút lưu -->
+        <Button
+            android:id="@+id/btnSaveProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lưu thông tin"
+            android:backgroundTint="@color/btn"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="20dp" />
+
+        <!-- Thêm 1 khoảng trắng để đảm bảo có thể scroll -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+</ScrollView>

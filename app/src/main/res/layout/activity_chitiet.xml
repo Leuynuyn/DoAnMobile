@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutDetail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.ChitietActivity">
+    <LinearLayout
+        android:id="@+id/topRightButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnCart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/btn_radius"
+            android:src="@drawable/bag"
+            android:contentDescription="Giỏ hàng" />
+
+        <ImageButton
+            android:id="@+id/btnNoti"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/btn_radius"
+            android:src="@drawable/noti"
+            android:contentDescription="Thông báo" />
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnAddToCart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- ViewPager2 -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerImages"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+            <!-- Indicator -->
+            <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+                android:id="@+id/dotsIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                app:dotsColor="@color/black"
+                app:selectedDotColor="@color/primary"
+                app:dotsSize="8dp"
+                app:dotsSpacing="6dp"
+                app:dotsCornerRadius="4dp" />
+
+            <!-- Tên sản phẩm -->
+            <TextView
+                android:id="@+id/textProductTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên sản phẩm"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp" />
+
+            <!-- Giá -->
+            <TextView
+                android:id="@+id/textProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.000.000đ"
+                android:textColor="@color/red"
+                android:textSize="18sp"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:id="@+id/sellerInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:paddingEnd="8dp">
+
+                <!-- Avatar người bán -->
+                <ImageView
+                    android:id="@+id/imgSellerAvatar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/default_avatar"
+                    android:scaleType="centerCrop"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/ic_user"
+                    android:clipToOutline="true" />
+
+                <!-- Tên người bán -->
+                <TextView
+                    android:id="@+id/tvSellerName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Người bán"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+                <!-- Icon chat -->
+                <ImageView
+                    android:id="@+id/iconChat"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_chat"
+                    android:contentDescription="Chat icon" />
+
+                <!-- Dấu chấm than -->
+                <ImageView
+                    android:id="@+id/iconReport"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_warning"
+                    android:contentDescription="Warning icon" />
+            </LinearLayout>
+
+
+            <!-- Mô tả -->
+            <TextView
+                android:id="@+id/textProductDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mô tả sản phẩm chi tiết..."
+                android:textSize="16sp"
+                android:layout_marginTop="25dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Nút thêm vào giỏ hàng cố định bên dưới -->
+    <Button
+        android:id="@+id/btnAddToCart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Thêm vào giỏ hàng"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/primary"
+        android:textColor="@android:color/white"
+        android:layout_margin="16dp"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

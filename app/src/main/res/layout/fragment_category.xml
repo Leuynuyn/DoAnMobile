@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View.FragmentNav.CategoryFragment">
+
+    <!-- AppBarLayout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#ECA526" />
+
+    <!-- ✅ Tiêu đề DANH MỤC -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Danh mục"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        android:padding="12dp" />
+
+    <!-- Nội dung cuộn -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="4"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:useDefaultMargins="true">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:id="@+id/quanAo"
+                android:background="@drawable/bg_category_item"
+                android:gravity="center">
+
+                <ImageView
+                    android:src="@drawable/ic_clothes"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Quần áo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quần áo"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Danh mục: Sách -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:id="@+id/sach"
+                android:background="@drawable/bg_category_item"
+                android:gravity="center">
+
+                <ImageView
+                    android:src="@drawable/ic_book"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Sách" />
+
+                <TextView
+                    android:text="Sách"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Danh mục: Điện thoại -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:id="@+id/dienThoai"
+                android:padding="12dp"
+                android:background="@drawable/bg_category_item"
+                android:gravity="center">
+
+                <ImageView
+                    android:src="@drawable/ic_phone"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Điện thoại" />
+
+                <TextView
+                    android:text="Điện thoại"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Danh mục: Trang sức -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:id="@+id/trangSuc"
+                android:padding="12dp"
+                android:background="@drawable/bg_category_item"
+                android:gravity="center">
+
+                <ImageView
+                    android:src="@drawable/ic_jewelry"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Trang sức" />
+
+                <TextView
+                    android:text="Trang sức"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Danh mục: Bàn phím -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:id="@+id/banPhim"
+                android:background="@drawable/bg_category_item"
+                android:gravity="center">
+
+                <ImageView
+                    android:src="@drawable/ic_keyboard"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Bàn phím" />
+
+                <TextView
+                    android:text="Bàn phím"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Danh mục: Giày dép -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:id="@+id/shoes"
+                android:padding="12dp"
+                android:background="@drawable/bg_category_item"
+                android:gravity="center">
+
+                <ImageView
+                    android:src="@drawable/ic_shoes"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Giày dép" />
+
+                <TextView
+                    android:text="Giày dép"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+            <!-- Danh mục: Khác -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:orientation="vertical"
+                android:id="@+id/orther"
+                android:padding="12dp"
+                android:background="@drawable/bg_category_item"
+                android:gravity="center">
+
+                <ImageView
+                    android:src="@drawable/ic_other"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:contentDescription="Khác" />
+
+                <TextView
+                    android:text="Khác"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </GridLayout>
+    </ScrollView>
+</LinearLayout>

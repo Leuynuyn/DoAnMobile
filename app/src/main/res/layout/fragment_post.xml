@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F7FA">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- Ảnh đại diện sản phẩm -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ảnh đại diện sản phẩm"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp" />
+
+        <ImageView
+            android:id="@+id/imgAvatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="8dp"
+            android:background="#DDD"
+            android:contentDescription="Ảnh đại diện"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/btnSelectAvatar"
+            android:layout_width="200dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:text="Chọn ảnh đại diện"
+            android:layout_marginTop="12dp" />
+
+        <!-- Tiêu đề -->
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tiêu đề sản phẩm"
+            android:layout_marginTop="20dp"
+            android:inputType="text" />
+
+        <!-- Mô tả -->
+        <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Mô tả"
+            android:inputType="textMultiLine"
+            android:minLines="3" />
+
+        <!-- Giá -->
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Giá (VNĐ)"
+            android:inputType="numberDecimal" />
+
+        <!-- Loại sản phẩm -->
+        <Spinner
+            android:id="@+id/spCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:entries="@array/product_categories" />
+
+        <!-- Tình trạng sản phẩm -->
+        <Spinner
+            android:id="@+id/spCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:entries="@array/product_conditions" />
+
+        <!-- Địa điểm -->
+        <EditText
+            android:id="@+id/etLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:hint="Địa điểm"
+            android:inputType="text" />
+
+        <!-- Ảnh sản phẩm -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hình ảnh (tối đa 10 ảnh)"
+            android:layout_marginTop="12dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/imageContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"/>
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/btnAddImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Thêm ảnh" />
+
+        <!-- Nút đăng -->
+        <Button
+            android:id="@+id/btnPostProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng sản phẩm"
+            android:layout_marginTop="18dp" />
+
+    </LinearLayout>
+</ScrollView>
